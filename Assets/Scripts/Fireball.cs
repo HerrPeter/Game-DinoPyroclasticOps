@@ -24,4 +24,9 @@ public class Fireball : MonoBehaviour
         if (transform.position.y < destroyBelowY)
             Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Destroy(gameObject);
+    }
 }

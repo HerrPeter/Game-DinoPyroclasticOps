@@ -11,8 +11,8 @@ public class PlayerMovement2D : MonoBehaviour
     [SerializeField]
     private float screenPadding = 0.5f;
 
-    [SerializeField]
-    private bool allowVerticalMovement = false;
+    // [SerializeField]
+    // private bool allowVerticalMovement = false;
 
     private Rigidbody2D rb;
     private Vector2 input;
