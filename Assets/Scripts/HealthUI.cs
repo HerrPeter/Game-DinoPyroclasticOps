@@ -4,7 +4,6 @@ using UnityEngine.UI;
 using TMPro;
 #endif
 
-
 public class HealthUI : MonoBehaviour
 {
     [Header("Hearts (left to right)")]
@@ -21,6 +20,9 @@ public class HealthUI : MonoBehaviour
     [Header("Game Over Text (optional)")]
     [SerializeField]
     private GameObject gameOverObject; // GameOverText object
+
+    [SerializeField]
+    private GameObject newGameButton;
 
     public void SetHearts(int currentLives)
     {
@@ -53,5 +55,8 @@ public class HealthUI : MonoBehaviour
     {
         if (gameOverObject != null)
             gameOverObject.SetActive(show);
+
+        if (newGameButton != null)
+            newGameButton.SetActive(show);
     }
 }
