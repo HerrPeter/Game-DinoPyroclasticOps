@@ -393,6 +393,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &575612904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575612906}
+  - component: {fileID: 575612905}
+  m_Layer: 0
+  m_Name: Fireball-Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &575612905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575612904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 393521421f058bd4fb33a4458954586b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireballSource
+  fireballPrefab: {fileID: 1524311129085541313, guid: 249eaf76d60722249ae1d8d5e170cee4, type: 3}
+  spawnInterval: 0.6
+  minX: -8
+  maxX: 8
+  spawnY: 6
+--- !u!4 &575612906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575612904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.72641, y: -1.43368, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1797950005
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +455,7 @@ GameObject:
   - component: {fileID: 1797950007}
   - component: {fileID: 1797950006}
   - component: {fileID: 1797950010}
+  - component: {fileID: 1797950011}
   m_Layer: 0
   m_Name: Player-Bird
   m_TagString: Untagged
@@ -565,6 +615,19 @@ MonoBehaviour:
   moveSpeed: 8
   screenPadding: 0.5
   allowVerticalMovement: 0
+--- !u!114 &1797950011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797950005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e62961d6b5965045a3a8e7d2ffe5d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  restartDelay: 0.25
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -573,3 +636,4 @@ SceneRoots:
   - {fileID: 541264366}
   - {fileID: 269438935}
   - {fileID: 1797950009}
+  - {fileID: 575612906}
