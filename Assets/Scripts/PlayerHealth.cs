@@ -81,5 +81,11 @@ public class PlayerHealth : MonoBehaviour
 
         if (healthUI != null)
             healthUI.ShowGameOver(true);
+
+        GameTimer timer = FindFirstObjectByType<GameTimer>();
+        if (timer != null)
+        {
+            timer.StopTimer();
+        }
     }
 }
