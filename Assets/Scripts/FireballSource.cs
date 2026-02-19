@@ -35,6 +35,7 @@ public class FireballSource : MonoBehaviour
 
     private float timer;
 
+    // Instantiates fireball fallrate difficulty when the game starts.
     void Start()
     {
         Difficulty = 1f;
@@ -46,6 +47,7 @@ public class FireballSource : MonoBehaviour
     {
         elapsed += Time.deltaTime;
 
+        // Increase difficulty in steps based on elapsed time:
         int newSteps = Mathf.FloorToInt(elapsed / stepEverySeconds);
         if (newSteps != steps)
         {
@@ -60,6 +62,7 @@ public class FireballSource : MonoBehaviour
             // );
         }
 
+        // Spawn new fireballs at a fixed interval here:
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
