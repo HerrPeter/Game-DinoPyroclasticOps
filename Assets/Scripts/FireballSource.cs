@@ -2,6 +2,21 @@ using UnityEngine;
 
 public class FireballSource : MonoBehaviour
 {
+    public static float Difficulty = 1f;
+
+    [Header("Difficulty (Step Ramp)")]
+    [SerializeField]
+    private float stepEverySeconds = 10; // 15 or 30 or 60
+
+    [SerializeField]
+    private float stepAmount = 0.25f; // +25% each step
+
+    [SerializeField]
+    private float maxDifficulty = 3f; // cap so it doesn't get insane
+
+    private float elapsed;
+    private int steps;
+
     [SerializeField]
     private GameObject fireballPrefab;
 
@@ -20,8 +35,31 @@ public class FireballSource : MonoBehaviour
 
     private float timer;
 
+    void Start()
+    {
+        Difficulty = 1f;
+        elapsed = 0f;
+        steps = 0;
+    }
+
     void Update()
     {
+        elapsed += Time.deltaTime;
+
+        int newSteps = Mathf.FloorToInt(elapsed / stepEverySeconds);
+        if (newSteps != steps)
+        {
+            steps = newSteps;
+
+            // float oldDifficulty = Difficulty;
+
+            Difficulty = Mathf.Min(1f + steps * stepAmount, maxDifficulty);
+
+            // Debug.Log(
+            //     $"Difficulty increased! Old: {oldDifficulty:F2} → New: {Difficulty:F2} at {elapsed:F1}s"
+            // );
+        }
+
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {

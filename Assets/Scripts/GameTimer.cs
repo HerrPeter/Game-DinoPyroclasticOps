@@ -15,7 +15,12 @@ public class GameTimer : MonoBehaviour
             return;
 
         elapsedTime += Time.deltaTime;
-        timerText.text = elapsedTime.ToString("F2");
+
+        int minutes = Mathf.FloorToInt(elapsedTime / 60f);
+        int seconds = Mathf.FloorToInt(elapsedTime % 60f);
+        int centiseconds = Mathf.FloorToInt((elapsedTime * 100f) % 100f);
+
+        timerText.text = $"{minutes:00}:{seconds:00}.{centiseconds:00}";
     }
 
     public void StopTimer()

@@ -17,8 +17,8 @@ public class Fireball : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Constant downward speed
-        rb.linearVelocity = Vector2.down * fallSpeed;
+        // Increasing fall speed based on difficulty found in fireballSource script.
+        rb.linearVelocity = Vector2.down * fallSpeed * FireballSource.Difficulty;
 
         // Cleanup when off-screen (or below gameplay area)
         if (transform.position.y < destroyBelowY)
